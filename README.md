@@ -6,7 +6,7 @@ ArchGen is a powerful tool designed to simplify the process of setting up new so
 
 
 Usage:
-Developers can start using ArchGen by specifying their preferred architectural pattern, programming language, and desired framework. Additionally, they can customize templates or use the pre-defined templates available with the tool. Once the configuration is set, ArchGen will create the project structure and codebase accordingly.
+Developers can start using ArchGen by specifying their preferred architectural pattern, programming language, and desired framework. Additionally, they can customize templates or use the pre-defined templates available with the tool. Once the configuration is set, ArchGen will create the project structure accordingly.
 
 With ArchGen, developers can focus on building their applications while adhering to a well-organized and maintainable project structure. The generated architecture sets the foundation for scalable, robust, and maintainable software projects.
 
