@@ -1,5 +1,5 @@
 # ArchGen
-Project Structure Generator for web and mobile development 
+Project Structure Generator for web and mobile development using GO
 
 
 ArchGen is a powerful tool designed to simplify the process of setting up new software projects with well-defined architectural patterns and organized project structures. It provides developers with an automated and customizable approach to generate the initial project layout, tailored to specific frameworks.
