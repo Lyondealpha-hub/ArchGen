@@ -10,4 +10,4 @@ Developers can start using ArchGen by specifying their preferred architectural p
 
 With ArchGen, developers can focus on building their applications while adhering to a well-organized and maintainable project structure. The generated architecture sets the foundation for scalable, robust, and maintainable software projects.
 
-Note: **ArchGen is an open-source project, actively maintained by Bytewave Inc. Contributions and feedback are welcomed to improve the tool and expand its capabilities further**.
+Note: **ArchGen is an open-source project, actively maintained. Contributions and feedback are welcomed to improve the tool and expand its capabilities further**.
