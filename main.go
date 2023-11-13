@@ -6,20 +6,25 @@ import (
 )
 
 func main() {
+var userinfo string
 
-	var userinput string
+// Taking input from user to name the componenet
+	fmt.Print("What name will you like to use : ")
+	fmt.Scanln(&userinfo)
 
-	// Taking input from user to name the componenet
-	fmt.Println("What name will you like to use : ")
-	fmt.Scanln(&userinput)
+	defer createStructure(userinfo);
+	
+	
+}
+
+func createStructure (structureName string, ) {
 
 	// Project structure layouts
-
 	projectStruct := map[string]interface{}{
-		userinput: map[string]interface{}{
+		structureName: map[string]interface{}{
 			"assests": map[string]interface{}{
-				"images": "images.tsx",
-				"brands": "logo.jsx",
+				"images": "file",
+				"brands": "file",
 			},
 			"screen":    nil,
 			"templates": nil,
@@ -39,7 +44,6 @@ func main() {
 	}
 
 	fmt.Println("ArchGen run successfully completed")
-
 }
 
 func createDirectories(directoriesMap map[string]interface{}, pathname string) error {
@@ -51,29 +55,40 @@ func createDirectories(directoriesMap map[string]interface{}, pathname string) e
 		// Create directories
 		err := os.Mkdir(dirPath, 0755)
 		// if error found
-		if err != nil {
-			return err
-		}
+		checkNilErr(err)
 
 		// Checking if there is a subdirectory ie. another map directory
 		if subDirectory, ok := value.(map[string]interface{}); !ok {
-			// creating an instruction file
-			// errFiles := os.Mkdir(filespath, 0755)
-
-			// if errFiles != nil {
-			// 	return errFiles
-			// }
-
+			// do nothing
 		} else {
-
 			// creates subdirectories
-			err = createDirectories(subDirectory, dirPath)
+			err := createDirectories(subDirectory, dirPath)
+			// creating files in subdirectories
+			for i, v := range subDirectory {
+				sub_dirPath := dirPath + "/" + i
+				fmt.Println("------------- PATH --------------- \n " + sub_dirPath + "\n")
+				// subs = os.Create([v])
+				if(v != nil && v == "file") {
+					fmt.Println(v)
+					sub_file, err := os.Create(sub_dirPath + "./images.tsx")
 
-			if err != nil {
-				return err
+					defer sub_file.Close();
+
+					checkNilErr(err)
+				}
+				
 			}
+			checkNilErr(err)
 		}
 
+	}
+	return nil
+}
+
+
+func checkNilErr (err error) error {
+	if(err != nil) {
+		panic(err)
 	}
 	return nil
 }
